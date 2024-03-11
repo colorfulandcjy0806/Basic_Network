@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-import numpy as np
 from torchvision import transforms
 from dataset import MyDataset # 引入自己设计的数据集读取
 from UNet import UNet # 引入网络结构
@@ -40,6 +39,21 @@ def dice_score(output, target):
         intersection = (output * target).sum((1, 2))
         dice = (2. * intersection + smooth) / (output.sum((1, 2)) + target.sum((1, 2)) + smooth)
     return dice.mean()
+
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=0.8, gamma=2):
+        super(FocalLoss, self).__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+        self.bce_with_logits_loss = nn.BCEWithLogitsLoss(reduction='none')
+
+    def forward(self, inputs, targets):
+        BCE_loss = self.bce_with_logits_loss(inputs, targets)
+        targets = targets.type(torch.long)
+        at = self.alpha * targets + (1 - self.alpha) * (1 - targets)
+        pt = torch.exp(-BCE_loss)
+        F_loss = at * (1 - pt) ** self.gamma * BCE_loss
+        return F_loss.mean()
 
 # 数据加载
 transform = transforms.Compose([

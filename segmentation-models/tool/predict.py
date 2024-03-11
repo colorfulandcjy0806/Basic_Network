@@ -2,7 +2,6 @@ import torch
 from torchvision import transforms
 from PIL import Image
 import matplotlib.pyplot as plt
-import numpy as np
 from UNet import UNet  # 引入网络结构
 
 

@@ -11,7 +11,8 @@ class MyDataset(Dataset):
     def __init__(self, data_path, transform=None):
         # 初始化函数，读取所有data_path下的图片
         self.data_path = data_path
-        self.imgs_path = glob.glob(os.path.join(data_path, 'images/*.jpg'))
+        print(data_path)
+        self.imgs_path = glob.glob(os.path.join(data_path, 'images/*.png'))
         self.transform = transform
 
     def __getitem__(self, index):
@@ -52,7 +53,7 @@ if __name__ == "__main__":
         # transforms.RandomVerticalFlip(),  # 随机垂直翻转图像
     ])
 
-    mydataset = MyDataset("data/train/", transform=transform)
+    mydataset = MyDataset("data/train", transform=transform)
 
     print("数据个数：", len(mydataset))
     train_loader = torch.utils.data.DataLoader(dataset=mydataset,

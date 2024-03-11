@@ -49,10 +49,8 @@ class Up(nn.Module):
         # 对x1进行填充以匹配x2的尺寸  跳跃连接在这步实现
         diffY = torch.tensor([x2.size()[2] - x1.size()[2]])
         diffX = torch.tensor([x2.size()[3] - x1.size()[3]])
-
         x1 = F.pad(x1, [diffX // 2, diffX - diffX // 2,
                         diffY // 2, diffY - diffY // 2])
-
         x = torch.cat([x2, x1], dim=1)
         return self.conv(x)
 
@@ -89,7 +87,9 @@ class UNet(nn.Module):
         x2 = self.down1(x1)
         x3 = self.down2(x2)
         x4 = self.down3(x3)
+        # print("x4.shape: ", x4.shape)
         x5 = self.down4(x4)
+        # print("x5.shape: ", x5.shape)
         x = self.up1(x5, x4)
         x = self.up2(x, x3)
         x = self.up3(x, x2)
