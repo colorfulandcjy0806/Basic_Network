@@ -98,8 +98,8 @@ class UNet(nn.Module):
         return logits
 
 if __name__ == '__main__':
-    random_input = torch.randn(1, 1, 224, 224)
-    model = UNet(n_channels=1, n_classes=1)
+    random_input = torch.randn(1, 3, 640, 640)
+    model = UNet(n_channels=3, n_classes=1)
     output = model(random_input)
     print("模型输出尺寸：", output.size())
     # print(net)

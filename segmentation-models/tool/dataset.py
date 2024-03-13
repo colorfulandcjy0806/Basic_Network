@@ -11,7 +11,7 @@ class MyDataset(Dataset):
     def __init__(self, data_path, transform=None):
         # 初始化函数，读取所有data_path下的图片
         self.data_path = data_path
-        print(data_path)
+        # print(data_path)
         self.imgs_path = glob.glob(os.path.join(data_path, 'images/*.png'))
         self.transform = transform
 
@@ -20,7 +20,7 @@ class MyDataset(Dataset):
         image_path = self.imgs_path[index]
         label_path = image_path.replace('images', 'masks')
         # 读取训练图片和标签图片
-        image = Image.open(image_path).convert("L")
+        image = Image.open(image_path)
         label = cv2.imread(label_path, cv2.IMREAD_GRAYSCALE)
 
         if self.transform:
@@ -30,7 +30,7 @@ class MyDataset(Dataset):
 
             # 对标签应用相同的变换，但首先转换为PIL图像
             label_transform = transforms.Compose([
-                transforms.Resize((224, 224)),  # 确保和图像变换尺寸一致
+                transforms.Resize((640, 640)),  # 确保和图像变换尺寸一致
                 transforms.ToTensor(),
             ])
             label = Image.fromarray(label)
@@ -47,7 +47,7 @@ class MyDataset(Dataset):
 
 if __name__ == "__main__":
     transform = transforms.Compose([
-        transforms.Resize((224, 224)),  # 调整图像大小为 (224, 224)
+        transforms.Resize((640, 640)),  # 调整图像大小为 (224, 224)
         transforms.ToTensor(),  # 将图像转换为 Tensor 格式
         # transforms.RandomHorizontalFlip(),  # 随机水平翻转图像
         # transforms.RandomVerticalFlip(),  # 随机垂直翻转图像
