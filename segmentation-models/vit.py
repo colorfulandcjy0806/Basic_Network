@@ -75,7 +75,6 @@ class TransformerEncoderBlock(nn.Module):
 
         return x
 
-
 class TransformerEncoder(nn.Module):
     def __init__(self, embedding_dim, head_num, mlp_dim, block_num=12):
         super().__init__()
@@ -141,5 +140,5 @@ if __name__ == '__main__':
               block_num=6,
               head_num=4,
               mlp_dim=1024)
-    print(sum(p.numel() for p in vit.parameters()))
+    # print(sum(p.numel() for p in vit.parameters()))
     print(vit(torch.rand(1, 3, 128, 128)).shape)

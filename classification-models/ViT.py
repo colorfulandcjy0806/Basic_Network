@@ -222,9 +222,9 @@ class VisionTransformer(nn.Module):
             x = torch.cat((cls_token, x), dim=1)  # [B, 197, 768]
         else:
             x = torch.cat((cls_token, self.dist_token.expand(x.shape[0], -1, -1), x), dim=1)
-
         x = self.pos_drop(x + self.pos_embed)
         x = self.blocks(x)
+
         x = self.norm(x)
         if self.dist_token is None:
             return self.pre_logits(x[:, 0])
@@ -233,6 +233,7 @@ class VisionTransformer(nn.Module):
 
     def forward(self, x):
         x = self.forward_features(x)
+
         if self.head_dist is not None:
             x, x_dist = self.head(x[0]), self.head_dist(x[1])
             if self.training and not torch.jit.is_scripting():
@@ -243,8 +244,6 @@ class VisionTransformer(nn.Module):
         else:
             x = self.head(x)
         return x
-
-
 
 if __name__ == '__main__':
     # 实例化模型

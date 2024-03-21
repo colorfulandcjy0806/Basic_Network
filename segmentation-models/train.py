@@ -6,6 +6,8 @@ from tqdm import tqdm
 from torchvision import transforms
 from dataset import MyDataset # 引入自己设计的数据集读取
 # from UNet import UNet # 引入网络结构
+from segformer_backbone import mit_b1
+from segformer import SegFormer
 from resunet import Unet
 import torch.nn.functional as F
 from scipy.ndimage import distance_transform_edt
@@ -31,11 +33,11 @@ max_lr = 1e-2   # 最大学习率，预热阶段结束时的学习率
 warmup_epochs = 10 # 预热epoch，可以不动
 num_epochs = 200
 best_iou = 0.0
-batch_size = 14 # 根据自己的GPU显存来，尽量大
+batch_size = 1 # 根据自己的GPU显存来，尽量大
 input_channels = 3 # 医学影像通常是灰度图，通道是1，如果是彩色的就改成3 RGB三个通道
 writer = SummaryWriter('../../tf-logs') # tensorboard引入日志记录
-train_pth = "dataset/train" # 训练集的路径
-test_pth = "dataset/test" # 测试集的路径
+train_pth = "train" # 训练集的路径
+test_pth = "test" # 测试集的路径
 # ==================各种超参数==================
 
 # 数据加载
@@ -55,7 +57,8 @@ test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 # 模型、优化器和损失函数
 # model = UNet(n_channels=input_channels, n_classes=num_class)
-model = Unet(num_classes=1, pretrained=True, backbone="resnet50")
+# model = Unet(num_classes=1, pretrained=True, backbone="resnet50")
+model = SegFormer(num_classes=1)
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 criterion = EnhancedLoss()
 # 应用学习率调度器
