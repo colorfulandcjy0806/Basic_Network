@@ -65,7 +65,7 @@ class DecoderBottleneck(nn.Module):
 
         if x_concat is not None:
             x = torch.cat([x_concat, x], dim=1)
-
+        print(x.shape)
         x = self.layer(x)
         return x
 
@@ -111,7 +111,7 @@ class Encoder(nn.Module):
 class Decoder(nn.Module):
     def __init__(self, out_channels, class_num):
         super().__init__()
-
+        print(out_channels)
         self.decoder1 = DecoderBottleneck(out_channels * 8, out_channels * 2)
         self.decoder2 = DecoderBottleneck(out_channels * 4, out_channels)
         self.decoder3 = DecoderBottleneck(out_channels * 2, int(out_channels * 1 / 2))
@@ -146,9 +146,9 @@ class TransUNet(nn.Module):
 
 
 if __name__ == '__main__':
-    random_input = torch.randn(1, 3, 128, 128)
-    model = TransUNet(img_dim=128, # 可以理解是特征图的输入尺寸
-                          in_channels=3,
+    random_input = torch.randn(1, 1, 512, 512)
+    model = TransUNet(img_dim=512, # 可以理解是特征图的输入尺寸
+                          in_channels=1,
                           out_channels=128, # 可以理解是特征图的输出尺寸
                           head_num=4,
                           mlp_dim=512,
