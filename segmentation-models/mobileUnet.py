@@ -243,7 +243,7 @@ class MobileNetV2(nn.Module):
                 m.bias.data.zero_()
 
 class UnetMobilenetV2(nn.Module):
-    def __init__(self, num_classes=1, num_filters=32, pretrained=True,
+    def __init__(self, num_classes=1, num_filters=32, pretrained=False,
                  Dropout=.2, path='./models/model_data/mobilenet_v2.pth.tar'):
         super(UnetMobilenetV2, self).__init__()
         
@@ -318,6 +318,7 @@ class UnetMobilenetV2(nn.Module):
             x1,
             self.dconv4(up3)
         ], dim=1)
+        print(up4.shape)
         up4 = self.invres4(up4)
         x = self.conv_last(up4)
         x = self.conv_score(x)

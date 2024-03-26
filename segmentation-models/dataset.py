@@ -22,7 +22,7 @@ class MyDataset(Dataset):
         # 读取训练图片和标签图片
         image = Image.open(image_path)
         label = cv2.imread(label_path, cv2.IMREAD_GRAYSCALE)
-
+        image = image.convert('RGB')
         if self.transform:
             # 对图像应用变换
             image_transform = self.transform
@@ -43,8 +43,6 @@ class MyDataset(Dataset):
         # 返回训练集大小
         return len(self.imgs_path)
 
-
-
 if __name__ == "__main__":
     transform = transforms.Compose([
         transforms.Resize((640, 640)),  # 调整图像大小为 (224, 224)
@@ -52,8 +50,7 @@ if __name__ == "__main__":
         # transforms.RandomHorizontalFlip(),  # 随机水平翻转图像
         # transforms.RandomVerticalFlip(),  # 随机垂直翻转图像
     ])
-
-    mydataset = MyDataset("data/train", transform=transform)
+    mydataset = MyDataset("data", transform=transform)
 
     print("数据个数：", len(mydataset))
     train_loader = torch.utils.data.DataLoader(dataset=mydataset,
