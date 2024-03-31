@@ -2,8 +2,7 @@ import torch
 import torch.nn as nn
 from einops import rearrange
 
-from vit import ViT
-
+from .vit import ViT
 
 class EncoderBottleneck(nn.Module):
     def __init__(self, in_channels, out_channels, stride=1, base_width=64):
@@ -61,11 +60,13 @@ class DecoderBottleneck(nn.Module):
         )
 
     def forward(self, x, x_concat=None):
+        # print("x.shape： ", x.shape)
+        # print("x_concat.shape: ", x_concat.shape)
         x = self.upsample(x)
 
         if x_concat is not None:
             x = torch.cat([x_concat, x], dim=1)
-        print(x.shape)
+
         x = self.layer(x)
         return x
 
@@ -111,7 +112,7 @@ class Encoder(nn.Module):
 class Decoder(nn.Module):
     def __init__(self, out_channels, class_num):
         super().__init__()
-        print(out_channels)
+
         self.decoder1 = DecoderBottleneck(out_channels * 8, out_channels * 2)
         self.decoder2 = DecoderBottleneck(out_channels * 4, out_channels)
         self.decoder3 = DecoderBottleneck(out_channels * 2, int(out_channels * 1 / 2))
@@ -140,21 +141,22 @@ class TransUNet(nn.Module):
 
     def forward(self, x):
         x, x1, x2, x3 = self.encoder(x)
+        # print(x.shape)
+        # print(x3.shape)
         x = self.decoder(x, x1, x2, x3)
 
         return x
 
 
 if __name__ == '__main__':
-    random_input = torch.randn(1, 1, 512, 512)
-    model = TransUNet(img_dim=512, # 可以理解是特征图的输入尺寸
+    import torch
+    transunet = TransUNet(img_dim=512,
                           in_channels=1,
-                          out_channels=128, # 可以理解是特征图的输出尺寸
+                          out_channels=128,
                           head_num=4,
                           mlp_dim=512,
                           block_num=8,
                           patch_dim=16,
                           class_num=1)
-    output = model(random_input)
-    print("模型输出尺寸：", output.size())
-    # print(net)
+    # print(sum(p.numel() for p in transunet.parameters()))
+    print(transunet(torch.randn(1, 1, 512, 512)).shape)
