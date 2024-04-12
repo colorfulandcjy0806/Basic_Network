@@ -1,9 +1,14 @@
 # Basic_Network 🌟
-
 ![Stars](https://img.shields.io/github/stars/colorfulandcjy0806/Basic_Network?style=social)
 ![Forks](https://img.shields.io/github/forks/colorfulandcjy0806/Basic_Network?style=social)
-![Issues](https://img.shields.io/github/issues/colorfulandcjy0806/Basic_Network)
-![Pull Requests](https://img.shields.io/github/issues-pr/colorfulandcjy0806/Basic_Network)
+[![GitHub repo watchers](https://img.shields.io/github/watchers/colorfulandcjy0806/Basic_Network?style=flat&logo=github&logoColor=whitesmoke&label=Watchers)](https://github.com/colorfulandcjy0806/Basic_Network/watchers)
+
+[![GitHub Commit](https://img.shields.io/github/commit-activity/m/colorfulandcjy0806/Basic_Network?label=Commit)](https://github.com/colorfulandcjy0806/Basic_Network/commits/main/)
+[![Pr](https://img.shields.io/github/issues-pr-closed-raw/colorfulandcjy0806/Basic_Network.svg?label=Merged+PRs&color=green)](https://github.com/colorfulandcjy0806/Basic_Network/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/colorfulandcjy0806/Basic_Network?color=critical&label=Issues)](https://github.com/colorfulandcjy0806/Basic_Network/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/colorfulandcjy0806/Basic_Network?color=success&label=Issues)](https://github.com/colorfulandcjy0806/Basic_Network/issues?q=is%3Aissue+is%3Aclosed) 
+
+[![GitHub repo size](https://img.shields.io/github/repo-size/colorfulandcjy0806/Basic_Network?style=flat&logo=github&logoColor=whitesmoke&label=Repo%20Size)](https://github.com/colorfulandcjy0806/Basic_Network/archive/refs/heads/main.zip)
 ![License](https://img.shields.io/github/license/colorfulandcjy0806/Basic_Network)
 
 Welcome to **Basic_Network**, your go-to repository for replicating classic deep learning architectures in the computer vision realm. From image classification to object detection and segmentation, we’ve got it all covered. Our mission is to make state-of-the-art deep learning accessible, understandable, and functional for researchers and developers alike. Join us on our journey as we dive deeper into the realm of multimodal content learning. 
