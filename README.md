@@ -77,5 +77,5 @@ For more information, visit our [Wiki](https://github.com/colorfulandcjy0806/Bas
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache License 2.0 License. See `LICENSE` for more information.
 
