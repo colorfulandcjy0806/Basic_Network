@@ -1,4 +1,4 @@
-# Basic_Network
+# Basic_Network 🌟
 
 ![Stars](https://img.shields.io/github/stars/colorfulandcjy0806/Basic_Network?style=social)
 ![Forks](https://img.shields.io/github/forks/colorfulandcjy0806/Basic_Network?style=social)
@@ -6,23 +6,71 @@
 ![Pull Requests](https://img.shields.io/github/issues-pr/colorfulandcjy0806/Basic_Network)
 ![License](https://img.shields.io/github/license/colorfulandcjy0806/Basic_Network)
 
-**Basic_Network** 是一个专注于复现计算机视觉领域内经典深度学习网络结构的项目。我们涵盖了图像分类、目标检测和图像分割等核心任务，并计划未来引入多模态内容学习，旨在为研究者和开发者提供一套易于理解和使用的基准实现。
+Welcome to **Basic_Network**, your go-to repository for replicating classic deep learning architectures in the computer vision realm. From image classification to object detection and segmentation, we’ve got it all covered. Our mission is to make state-of-the-art deep learning accessible, understandable, and functional for researchers and developers alike. Join us on our journey as we dive deeper into the realm of multimodal content learning. 
 
-## 特色
+## 🌈 Features
 
-- **经典网络复现**：提供了ResNet、ViT等经典网络的PyTorch实现。
-- **多任务学习**：不仅限于图像分类，还拓展到目标检测和图像分割等任务。
-- **代码清晰**：注重代码的可读性和可维护性，附有详细的注释。
-- **性能对比**：提供各模型在标准数据集上的性能比较。
-- **持续更新**：计划引入更多前沿模型和多模态学习内容。
+- **Classic Network Replications**: Dive into our PyTorch implementations of iconic networks like ResNet and ViT.
+- **Multitask Learning**: We go beyond image classification to include object detection and image segmentation.
+- **Clean Code**: Our code is crafted for clarity and maintainability, complete with detailed annotations.
+- **Performance Benchmarks**: We provide comparative performance metrics across standard datasets.
+- **Continuous Evolution**: Stay tuned for the integration of cutting-edge models and multimodal learning approaches.
 
-## 开始使用
+## 🚀 Getting Started
 
-开始之前，请确保您已经安装了Python和PyTorch。然后，您可以通过以下步骤使用Basic_Network：
-
-1. 克隆仓库：
+Ensure you have Python and PyTorch installed before you begin. Here’s how to get set up with Basic_Network:
 
 ```bash
 git clone https://github.com/colorfulandcjy0806/Basic_Network.git
 cd Basic_Network
 ```
+
+## What’s Inside?
+
+- **Classification Models**: Tap into our collection of models designed for pinpoint accuracy in image classification.
+- **Detection Models**: Explore models that can detect and precisely locate objects within an image.
+- **Segmentation Models**: Uncover models adept at distinguishing between different segments of an image, ideal for detailed analysis.
+
+## 🌐 Explore Our Work
+
+Dive into each domain with comprehensive guides and examples:
+
+- **Classification**: `classification-models/`
+- **Detection**: `detection-models/`
+- **Segmentation**: `segmentation-models/`
+
+Your journey towards mastering deep learning in computer vision begins here. Let **Basic_Network** be your guide to the complex, fascinating world of neural networks and beyond.
+
+### ✊ Todo List with a Focus on Networks for Basic_Network
+
+#### 🚀 New Networks to Implement
+
+- [ ] **EfficientNet**: Implement EfficientNet for scalable and efficient image classification. This network scales all dimensions of the model (depth, width, resolution) with a compound coefficient to balance between accuracy and efficiency.
+- [ ] **YOLO (You Only Look Once)**: Integrate the latest versions of the YOLO series (such as YOLOv5 or YOLOv6) for fast and accurate real-time object detection.
+- [ ] **Transformer Models (e.g., DETR, DeiT)**: Introduce models based on Transformers that have shown great performance in tasks like image classification and object detection.
+- [ ] **Mask R-CNN**: Implement Mask R-CNN for instance segmentation, providing high-quality segmentation masks for each detected object in addition to their bounding boxes.
+- [ ] **GANs (Generative Adversarial Networks)**: Develop models for image generation tasks using GANs, such as StyleGAN or BigGAN, exploring applications in style transfer, image enhancement, etc.
+- [x] **U-Net for Medical Image Segmentation**: Adopt U-Net for a focus on segmentation in medical imaging, supporting a wider range of segmentation applications, particularly in biomedical imaging.
+- [ ] **Graph Convolutional Networks (GCNs)**: Explore the application of GCNs for image classification and object detection, processing graph-structured data.
+
+#### 🌐 Expand Existing Categories
+
+- [ ] **Extend Classification Models**: Add more advanced image classification models like DenseNet and MobileNet series to support efficient image processing in resource-constrained environments.
+- [ ] **Enhance Detection Models with Real-time Capabilities**: Optimize existing object detection models for faster processing suitable for real-time applications, by implementing lightweight models like SSD or improving YOLO architectures.
+- [ ] **Advanced Techniques in Segmentation**: Incorporate the latest image segmentation technologies, such as DeepLabv3 and PSPNet, to improve segmentation accuracy and efficiency.
+
+
+## 📚 Learn More
+
+For more information, visit our [Wiki](https://github.com/colorfulandcjy0806/Basic_Network/wiki) or check out our [issues](https://github.com/colorfulandcjy0806/Basic_Network/issues) for current discussions.
+
+## 🤝 Community contributors
+
+<a href="https://github.com/colorfulandcjy0806/Basic_Network/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=colorfulandcjy0806/Basic_Network" />
+</a>
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
