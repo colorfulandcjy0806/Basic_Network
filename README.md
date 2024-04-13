@@ -54,7 +54,7 @@ Your journey towards mastering deep learning in computer vision begins here. Let
 - [ ] **Transformer Models (e.g., DETR, DeiT)**: Introduced models based on Transformers that have shown great performance in tasks like image classification and object detection.
 
 #### 🌐 Introducing Better Tools
-- [x] **[augmentation.py](./segmentation-models/tools/augmentation.py) (April 2024)**: Implemented data augmentation techniques using the Albumentations library. This script is designed to enhance image datasets by applying various transformations such as flipping, rotation, scaling, brightness/contrast adjustment, and more.
+- [x] **[augmentation.py](https://github.com/colorfulandcjy0806/Basic_Network/blob/main/segmentation-models/tool/augmentation.py) (April 2024)**: Implemented data augmentation techniques using the Albumentations library. This script is designed to enhance image datasets by applying various transformations such as flipping, rotation, scaling, brightness/contrast adjustment, and more.
 
 ## 🤝 Community contributors
 
