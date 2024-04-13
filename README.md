@@ -46,28 +46,15 @@ Dive into each domain with comprehensive guides and examples:
 
 Your journey towards mastering deep learning in computer vision begins here. Let **Basic_Network** be your guide to the complex, fascinating world of neural networks and beyond.
 
-### ✊ Todo List with a Focus on Networks for Basic_Network
+### ✊ News with a Focus on Networks for Basic_Network
 
-#### 🚀 New Networks to Implement
+#### 🚀 New Networks Recently Implemented
 
-- [ ] **EfficientNet**: Implement EfficientNet for scalable and efficient image classification. This network scales all dimensions of the model (depth, width, resolution) with a compound coefficient to balance between accuracy and efficiency.
-- [ ] **YOLO (You Only Look Once)**: Integrate the latest versions of the YOLO series (such as YOLOv5 or YOLOv6) for fast and accurate real-time object detection.
-- [ ] **Transformer Models (e.g., DETR, DeiT)**: Introduce models based on Transformers that have shown great performance in tasks like image classification and object detection.
-- [ ] **Mask R-CNN**: Implement Mask R-CNN for instance segmentation, providing high-quality segmentation masks for each detected object in addition to their bounding boxes.
-- [ ] **GANs (Generative Adversarial Networks)**: Develop models for image generation tasks using GANs, such as StyleGAN or BigGAN, exploring applications in style transfer, image enhancement, etc.
 - [x] **U-Net for Medical Image Segmentation**: Adopt U-Net for a focus on segmentation in medical imaging, supporting a wider range of segmentation applications, particularly in biomedical imaging.
-- [ ] **Graph Convolutional Networks (GCNs)**: Explore the application of GCNs for image classification and object detection, processing graph-structured data.
+- [ ] **Transformer Models (e.g., DETR, DeiT)**: Introduced models based on Transformers that have shown great performance in tasks like image classification and object detection.
 
-#### 🌐 Expand Existing Categories
-
-- [ ] **Extend Classification Models**: Add more advanced image classification models like DenseNet and MobileNet series to support efficient image processing in resource-constrained environments.
-- [ ] **Enhance Detection Models with Real-time Capabilities**: Optimize existing object detection models for faster processing suitable for real-time applications, by implementing lightweight models like SSD or improving YOLO architectures.
-- [ ] **Advanced Techniques in Segmentation**: Incorporate the latest image segmentation technologies, such as DeepLabv3 and PSPNet, to improve segmentation accuracy and efficiency.
-
-
-## 📚 Learn More
-
-For more information, visit our [Wiki](https://github.com/colorfulandcjy0806/Basic_Network/wiki) or check out our [issues](https://github.com/colorfulandcjy0806/Basic_Network/issues) for current discussions.
+#### 🌐 Introducing Better Tools
+- [x] **[augmentation.py](https://github.com/colorfulandcjy0806/Basic_Network/blob/main/segmentation-models/tools/augmentation.py) (April 2024)**: Implemented data augmentation techniques using the Albumentations library. This script is designed to enhance image datasets by applying various transformations such as flipping, rotation, scaling, brightness/contrast adjustment, and more.
 
 ## 🤝 Community contributors
 
